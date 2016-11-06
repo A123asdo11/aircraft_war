@@ -131,6 +131,9 @@ cc.Class({
             
         } else {
             preData = JSON.parse(preData);
+	    if (!(preData instanceof Array)){
+                preData = [];    
+            }
             preData.unshift(scoreData);
         }
         cc.sys.localStorage.setItem('currentScore', currentScore);
